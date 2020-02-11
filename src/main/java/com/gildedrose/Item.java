@@ -1,5 +1,7 @@
 package com.gildedrose;
 
+import static com.gildedrose.GildedRose.SULFURAS_HAND_OF_RAGNAROS;
+
 public class Item {
 
     public String name;
@@ -12,6 +14,12 @@ public class Item {
         this.name = name;
         this.sell_in = sell_in;
         this.quality = quality;
+    }
+
+    public void sellInCal() {
+        if (!name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
+            sell_in = sell_in - 1;
+        }
     }
 
     @Override
