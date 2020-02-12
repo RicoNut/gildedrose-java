@@ -24,20 +24,8 @@ class GildedRose {
         for (int i = 0; i < items.length; i++) {
             // 计算变质期：递减1
             items[i].sellInCal();
-
+            // 计算价值
             items[i].updateQuality();
-            // 后台通行证计算quality
-//            if (items[i].name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT)) {
-//                backStagePassQuality(items[i]);
-//            }
-//            // 陈年干酪计算quality
-//            else if (items[i].name.equals(AGED_BRIE)) {
-//                agedBrieQuality(items[i]);
-//            } else if (items[i].name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
-//                sulfursQuality();
-//            } else {
-//                commonQuality(items[i]);
-//            }
         }
     }
 

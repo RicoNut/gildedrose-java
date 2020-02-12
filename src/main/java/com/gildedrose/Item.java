@@ -12,7 +12,7 @@ public class Item {
 
     public int quality;
 
-    private Quality qualityObj;
+    private Quality qualityOpt;
 
     public Item(String name, int sell_in, int quality) {
         this.name = name;
@@ -27,22 +27,22 @@ public class Item {
     }
 
     public void updateQuality() {
-        quality = getQualityObj().calculatorQuality(name, sell_in, quality);
+        quality = getQualityOpt().calculatorQuality(name, sell_in, quality);
     }
 
-    public Quality getQualityObj() {
+    public Quality getQualityOpt() {
         if (name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT)) {
-            qualityObj = new BackStagePassQuality();
+            qualityOpt = new BackStagePassQuality();
         }
         // 陈年干酪计算quality
         else if (name.equals(AGED_BRIE)) {
-            qualityObj = new BrieQuality();
+            qualityOpt = new BrieQuality();
         } else if (name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
-            qualityObj = new SulfursQuality();
+            qualityOpt = new SulfursQuality();
         } else {
-            qualityObj = new CommonQuality();
+            qualityOpt = new CommonQuality();
         }
-        return qualityObj;
+        return qualityOpt;
     }
 
     @Override
