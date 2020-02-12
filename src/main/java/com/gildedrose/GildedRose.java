@@ -67,7 +67,7 @@ class GildedRose {
      * 陈年干酪计算quality
      */
     public void agedBrieQuality(Item item) {
-        int inCre = 1;
+        int inCre = 0;
         if (item.quality < 50) {
             inCre++;
         }
