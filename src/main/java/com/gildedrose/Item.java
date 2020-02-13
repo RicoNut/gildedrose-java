@@ -17,7 +17,7 @@ public class Item {
 
     public void setSellIn() {
         if (!name.equals(ItemName.SULFURAS_HAND_OF_RAGNAROS.getName())) {
-            sell_in = sell_in - 1;
+            sellIn = sellIn - 1;
         }
     }
 
