@@ -14,19 +14,31 @@ public class Item {
         this.quality = quality;
     }
 
-    void updateQuality() {
-        if (!name.equals("Aged Brie")
-                && !name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+
+    public void setSellIn() {
+        if (!name.equals(ItemName.SULFURAS_HAND_OF_RAGNAROS.getName())) {
+            sellIn = sellIn - 1;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return this.name + ", " + this.sellIn + ", " + this.quality;
+    }
+
+    public void calcQuality() {
+        if (!name.equals(ItemName.AGED_BRIE.getName())
+                && !name.equals(ItemName.BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT.getName())){
             if (quality > 0) {
-                if (!name.equals("Sulfuras, Hand of Ragnaros")) {
+                if (!name.equals(ItemName.SULFURAS_HAND_OF_RAGNAROS.getName())) {
                     quality = quality - 1;
                 }
             }
-        } else {
+        } else{
             if (quality < 50) {
                 quality = quality + 1;
 
-                if (name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                if (name.equals(ItemName.BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT.getName())){
                     if (sellIn < 11) {
                         if (quality < 50) {
                             quality = quality + 1;
@@ -41,21 +53,19 @@ public class Item {
                 }
             }
         }
-
-        if (!name.equals("Sulfuras, Hand of Ragnaros")) {
-            sellIn = sellIn - 1;
-        }
+        // 处理保质期
+        setSellIn();
 
         if (sellIn < 0) {
-            if (!name.equals("Aged Brie")) {
-                if (!name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+            if (!name.equals(ItemName.AGED_BRIE.getName())) {
+                if (!name.equals(ItemName.BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT.getName())){
                     if (quality > 0) {
-                        if (!name.equals("Sulfuras, Hand of Ragnaros")) {
+                        if (!name.equals(ItemName.SULFURAS_HAND_OF_RAGNAROS.getName())) {
                             quality = quality - 1;
                         }
                     }
-                } else {
-                    quality = 0;
+                } else{
+                    quality = quality - quality;
                 }
             } else {
                 if (quality < 50) {
@@ -63,10 +73,5 @@ public class Item {
                 }
             }
         }
-    }
-
-    @Override
-    public String toString() {
-        return this.name + ", " + this.sellIn + ", " + this.quality;
     }
 }
