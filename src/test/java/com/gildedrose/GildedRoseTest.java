@@ -36,10 +36,10 @@ public class GildedRoseTest {
      */
     @Test
     public void AgedBrie_sellIn_1_quality_5() {
-        Item[] items = new Item[]{new Item("Aged Brie", 1, 5)};
+        Item[] items = new Item[]{new Item(ItemName.AGED_BRIE.getName(), 1, 5)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals("Aged Brie", app.items[0].name);
+        assertEquals(ItemName.AGED_BRIE.getName(), app.items[0].name);
         assertThat(app.items[0].quality, is(6));
         assertThat(app.items[0].sellIn, is(0));
     }
@@ -62,10 +62,10 @@ public class GildedRoseTest {
      */
     @Test
     public void AgedBrie_sellIn_1_quality_50() {
-        Item[] items = new Item[]{new Item("Aged Brie", 1, 50)};
+        Item[] items = new Item[]{new Item(ItemName.AGED_BRIE.getName(), 1, 50)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals("Aged Brie", app.items[0].name);
+        assertEquals(ItemName.AGED_BRIE.getName(), app.items[0].name);
         assertThat(app.items[0].quality, is(50));
         assertThat(app.items[0].sellIn, is(0));
     }
@@ -75,10 +75,10 @@ public class GildedRoseTest {
      */
     @Test
     public void Sulfuras_sellIn_1_quality_50() {
-        Item[] items = new Item[]{new Item("Sulfuras, Hand of Ragnaros", 1, 50)};
+        Item[] items = new Item[]{new Item(ItemName.SULFURAS_HAND_OF_RAGNAROS.getName(), 1, 50)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals("Sulfuras, Hand of Ragnaros", app.items[0].name);
+        assertEquals(ItemName.SULFURAS_HAND_OF_RAGNAROS.getName(), app.items[0].name);
         assertThat(app.items[0].quality, is(50));
         assertThat(app.items[0].sellIn, is(1));
     }
@@ -90,10 +90,10 @@ public class GildedRoseTest {
      */
     @Test
     public void Backstage_sellIn_11_quality_11() {
-        Item[] items = new Item[]{new Item("Backstage passes to a TAFKAL80ETC concert", 11, 11)};
+        Item[] items = new Item[]{new Item(ItemName.BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT.getName(), 11, 11)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals("Backstage passes to a TAFKAL80ETC concert", app.items[0].name);
+        assertEquals(ItemName.BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT.getName(), app.items[0].name);
         assertThat(app.items[0].quality, is(12));
         assertThat(app.items[0].sellIn, is(10));
     }
@@ -105,10 +105,10 @@ public class GildedRoseTest {
      */
     @Test
     public void Backstage_sellIn_9_quality_11() {
-        Item[] items = new Item[]{new Item("Backstage passes to a TAFKAL80ETC concert", 9, 11)};
+        Item[] items = new Item[]{new Item(ItemName.BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT.getName(), 9, 11)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals("Backstage passes to a TAFKAL80ETC concert", app.items[0].name);
+        assertEquals(ItemName.BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT.getName(), app.items[0].name);
         assertThat(app.items[0].quality, is(13));
         assertThat(app.items[0].sellIn, is(8));
     }
@@ -120,10 +120,10 @@ public class GildedRoseTest {
      */
     @Test
     public void Backstage_sellIn_3_quality_11() {
-        Item[] items = new Item[]{new Item("Backstage passes to a TAFKAL80ETC concert", 3, 11)};
+        Item[] items = new Item[]{new Item(ItemName.BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT.getName(), 3, 11)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals("Backstage passes to a TAFKAL80ETC concert", app.items[0].name);
+        assertEquals(ItemName.BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT.getName(), app.items[0].name);
         assertThat(app.items[0].quality, is(14));
         assertThat(app.items[0].sellIn, is(2));
     }
@@ -135,10 +135,10 @@ public class GildedRoseTest {
      */
     @Test
     public void Backstage_sellIn_negetive_quality_11() {
-        Item[] items = new Item[]{new Item("Backstage passes to a TAFKAL80ETC concert", 0, 11)};
+        Item[] items = new Item[]{new Item(ItemName.BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT.getName(), 0, 11)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals("Backstage passes to a TAFKAL80ETC concert", app.items[0].name);
+        assertEquals(ItemName.BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT.getName(), app.items[0].name);
         assertThat(app.items[0].quality, is(0));
         assertThat(app.items[0].sellIn, is(-1));
     }
